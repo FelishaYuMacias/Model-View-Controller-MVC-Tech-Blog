@@ -1,0 +1,11 @@
+:root {
+--primary: darkcyan;
+--secondary: #B4CDE6;
+--light: #F5EFE6;
+--dark: #3C2317;
+--error: rgb(228, 46, 1);
+}
+
+body {
+background-color: var(--primary);
+}
