@@ -10,8 +10,24 @@
 <body>
     <header>
         <nav>
-            {{!-- nav bar with login/signup home dashboard logout --}}
-        </nav>
+           <a href="/">
+        <div>
+          Home
+        </div>
+      </a>
+      <a href="#">
+        <div>
+          Dashboard
+        </div>
+      </a>
+        <div id="logBtn">
+             {{#if loggedIn}}
+              <a href="#">Logout</a>
+          {{else}}
+            <a href="#">Login</a>
+          {{/if}}
+        </div>
+    </nav>
     </header>
     {{{body}}}
 

@@ -4,12 +4,12 @@ const { Blog, Comment, User } = require('../models');
 
 // GET homepage
 router.get('/', async (req, res) => {
-  Blog.findAll().then(blogs=>{
+  Blog.findAll({include:[User,Comment]}).then(blogs=>{
     const blogsHbsData = blogs.map(blog=>blog.get({plain:true}))
     console.log(blogs);
     console.log("==============")
     console.log(blogsHbsData) 
-    
+
     res.render('homepage', {
       blogs:blogsHbsData,
       loggedIn: req.session.loggedIn,
