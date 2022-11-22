@@ -4,7 +4,7 @@ const { User, Blog, Comment } = require('../../models')
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
-      include: [Wishlist]
+      include: [Blog]
     })
 
     res.status(200).json(userData)
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 //one user by id
 router.get('/:id', (req, res) => {
   User.findByPk(req.params.id, {
-    include: [Wishlist]
+    include: [Blog]
   }).then(user => {
     const userHbsData = user.get({ plain: true });
     console.log(user);
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 router.get('/search/:username', (req, res) => {
   User.findOne({
     where: { username: req.params.username },
-    include: [Wishlist]
+    include: [Blog]
   }).then(user => {
     const userNameHbsData = user.get({ plain: true });
     console.log(user);

@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 //login page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    return res.redirect('/dashboard')
+    return res.redirect('/')
   }
   res.render('login', {
     loggedIn: false,
@@ -43,7 +43,7 @@ router.get("/dashboard", (req, res) => {
       console.log(hbsData)
       hbsData.loggedIn = true
       hbsData.user_id = req.session.user_id
-      res.render("dashboard", hbsData)
+      return res.redirect('/')
     })
 })
 
