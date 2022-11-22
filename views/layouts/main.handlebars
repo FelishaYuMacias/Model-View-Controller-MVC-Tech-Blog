@@ -15,11 +15,13 @@
           Home
         </div>
       </a>
-      <a href="/dashboard">
-        <div>
-          Dashboard
+     <div id="dashboard">
+             {{#if loggedIn}}
+              <a href="/dashboard">Dashboard</a>
+          {{else}}
+            <a href="/login">Dashboard</a>
+          {{/if}}
         </div>
-      </a>
         <div id="logBtn">
              {{#if loggedIn}}
               <button
