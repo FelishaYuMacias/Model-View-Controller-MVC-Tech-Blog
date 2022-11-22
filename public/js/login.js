@@ -1,7 +1,7 @@
 const loginForm = document.querySelector("#login");
 loginForm.addEventListener("submit", e => {
-    // e.preventDefault();
-    // console.log('PREVENTED DEFAULT!')
+    e.preventDefault();
+    console.log('PREVENTED DEFAULT!')
     const userObj = {
         username: document.querySelector("#loginUser").value,
         password: document.querySelector("#loginPassword").value,
@@ -14,7 +14,8 @@ loginForm.addEventListener("submit", e => {
         }
     }).then(res => {
         if (res.ok) {
-            location.replace("/dashboard")
+            alert("logged in!")
+            location.replace("/")
         } else {
             alert("error logging in")
         }
@@ -38,7 +39,7 @@ signupForm.addEventListener("submit",e=>{
     }).then(res=>{
         if(res.ok){
             alert("signed up!")
-            location.reload()
+            location.replace("/")
         } else {
             alert("error signing up")
         }
