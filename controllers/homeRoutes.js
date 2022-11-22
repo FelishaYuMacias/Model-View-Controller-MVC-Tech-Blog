@@ -18,5 +18,33 @@ router.get('/', async (req, res) => {
   })
 })
 
+//login page
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    return res.redirect('/dashboard')
+  }
+  res.render('login', {
+    loggedIn: false,
+    user_id: null
+  })
+})
+
+//dashboard page
+router.get("/dashboard", (req, res) => {
+  if (!req.session.loggedIn) {
+    return res.redirect("/login")
+  }
+  
+  User.findByPk(req.session.user_id, {
+    include: [Blog]
+  })
+  .then(userData => {
+      const hbsData = userData.toJSON()
+      console.log(hbsData)
+      hbsData.loggedIn = true
+      hbsData.user_id = req.session.user_id
+      res.render("dashboard", hbsData)
+    })
+})
 
 module.exports = router
