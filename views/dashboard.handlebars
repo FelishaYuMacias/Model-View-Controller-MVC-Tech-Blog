@@ -1,1 +1,11 @@
-<h1>Welcome to your Dashboard{{username}}</h1>
+<h1>Welcome to your Dashboard {{username}}</h1>
+{{#if blogs.length}}
+  <div class="blog-list">
+    <h3>Current Blogs:</h3>
+
+    {{#each blogs as |blog|}}
+        <h4><a href="/api/blogs/{{blog.id}}">{{blog.title}}</a></h4>
+        <button id = "deleteBtn" data-id="{{blog.id}}">DELETE</button>
+    {{/each}}
+  </div>
+  {{/if}}

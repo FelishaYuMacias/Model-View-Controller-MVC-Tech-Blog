@@ -1,6 +1,25 @@
-<h2>Post Title</h2>
-<p>creator's name</p>
-<p>contents</p>
-<p>date created</p>
-<div>leave comment</div>
-<div>comments</div>
+<h2>{{title}}</h2>
+<p>by: {{user.username}}</p>
+<p>{{content}}</p>
+
+{{#if loggedIn}}
+<form class="new-comment-form" data-blogid={{id}}>
+    <div class="textAreaCont p-2">
+        <textarea id='comment_description' name="comment-body" placeholder="Enter a comment here..." cols="30"
+            rows="2"></textarea>
+    </div>
+    <div class="btnComment p-2">
+        <button class="button btn btn-success" type="submit">Add Comment</button>
+    </div>
+</form>
+{{/if}}
+
+
+<h3 class="text-center">Comments</h3>
+{{#each comments as |comment|}}
+<div class="commentCont">
+    <p class="commentText">{{comment.comment_text}}</p>
+    <p class="commentOwner"><span>~</span>Created by {{comment.user.username}} on {{comment.created_at}}<span>~</span>
+    </p>
+</div>
+{{/each}}

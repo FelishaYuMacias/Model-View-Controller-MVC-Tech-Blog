@@ -14,7 +14,7 @@ loginForm.addEventListener("submit", e => {
         }
     }).then(res => {
         if (res.ok) {
-            location.redirect("/")
+            location.redirect("/dashboard")
         } else {
             alert("error logging in")
         }
@@ -28,8 +28,6 @@ signupForm.addEventListener("submit",e=>{
     const userObj = {
         username:document.querySelector("#signupUser").value,
         password:document.querySelector("#signupPassword").value,
-        first_name:document.querySelector("#signupFirst").value,
-        last_name:document.querySelector("#signupLast").value,
     }
     fetch("/api/users/",{
         method:"POST",
