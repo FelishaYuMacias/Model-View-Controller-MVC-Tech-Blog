@@ -14,7 +14,7 @@ loginForm.addEventListener("submit", e => {
         }
     }).then(res => {
         if (res.ok) {
-            location.redirect("/dashboard")
+            location.replace("/dashboard")
         } else {
             alert("error logging in")
         }
