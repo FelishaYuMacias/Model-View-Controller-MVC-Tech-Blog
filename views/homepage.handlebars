@@ -1,6 +1,6 @@
 <h1>Blog Posts</h1>
 {{#each blogs}}
-<h2>{{title}}</h2>
-<h3>by: {{user.username}}</h3>
-<p>{{content}}</p>
+<h2> <a href="/api/blogs/{{id}}">{{title}}</a> </h2>
+<p> Created on: {{date_created}}</p> 
+<hr>
 {{/each}}

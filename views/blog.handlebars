@@ -1,11 +1,11 @@
 <h2>{{title}}</h2>
-<p>by: {{user.username}}</p>
-<p>{{content}}</p>
+<p  style="font-size:20px">{{content}}</p>
+<p>Created by: {{user.username}} on {{date_created}}</p>
 
 {{#if loggedIn}}
-<form class="new-comment-form" data-blogid={{id}}>
+<form id="commentForm" class="new-comment-form" data-blogid={{id}}>
     <div class="textAreaCont p-2">
-        <textarea id='comment_description' name="comment-body" placeholder="Enter a comment here..." cols="30"
+        <textarea id='comment_text' name="comment-body" placeholder="Enter a comment here..." cols="30"
             rows="2"></textarea>
     </div>
     <div class="btnComment p-2">
@@ -23,3 +23,5 @@
     </p>
 </div>
 {{/each}}
+
+<script src="/js/comment.js"></script>
