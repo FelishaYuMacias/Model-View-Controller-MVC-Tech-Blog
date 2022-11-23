@@ -1,6 +1,9 @@
-<h1>Blog Posts</h1>
+<h1>Tech Blog Homepage</h1>
+<h3 style="text-align:center">See All Blog Posts Below</h3>
 {{#each blogs}}
+<div class="post">
 <h2> <a href="/api/blogs/{{id}}">{{title}}</a> </h2>
 <p> Created on: {{date_created}}</p> 
+</div>
 <hr>
 {{/each}}

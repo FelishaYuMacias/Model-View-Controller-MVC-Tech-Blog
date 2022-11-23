@@ -1,11 +1,63 @@
 :root {
---primary: darkcyan;
---secondary: #B4CDE6;
---light: #F5EFE6;
---dark: #3C2317;
---error: rgb(228, 46, 1);
+    --primary: #2B4865;
+    --secondary: #256D85;
+    --light: #8FE3CF;
+    --dark: #002B5B;
+    --error: rgb(228, 46, 1);
 }
 
 body {
-background-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: arial, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+li, li a {
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    color: var(--light);
+    padding: 1%;
+    margin:0 12%;
+    font-size: 18px;
+}
+#logoutBtn {
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--light);
+    font-family: arial, sans-serif;
+    font-size: 18px;
+  }
+h2 {
+    background-color: var(--light);
+    color: var(--dark);
+}
+.post{
+    margin-top: 30px;
+}
+.blog{
+  border: solid var(--dark);
+  background-color: var(--light);
+  color: var(--dark);  
+}
+  button {
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--dark);
+    border: solid var(--dark);
+    color: var(--light);
+    font-family: arial, sans-serif;
+    padding: 5px;
+    margin: 5px;
+  }
+a {
+    color: var(--dark);
+}
+
+.post {
+    background-color: var(--secondary);
 }

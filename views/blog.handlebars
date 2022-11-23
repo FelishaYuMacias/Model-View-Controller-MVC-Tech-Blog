@@ -15,13 +15,13 @@
 {{/if}}
 
 
-<h3 class="text-center">Comments</h3>
+<h3>Comments:</h3>
 {{#each comments}}
 <div class="commentCont">
     <p class="commentText">{{comment_text}}</p>
     <p class="commentOwner"><span>~</span>Created by {{user.username}} on {{date_created}}<span>~</span></p>
-    {{#if loggedIn}}
-              <button class="commentDeleteBtn">Delete</button>
+    {{#if ../loggedIn}}
+              <button class="commentDeleteBtn" comment-id="{{id}}">Delete</button>
           {{else}}
             <hr>
           {{/if}}

@@ -1,5 +1,3 @@
-console.log("dashboard js linked")
-
 const blogForm=document.querySelector('#blogForm');
 blogForm.addEventListener("submit", e=> {
     e.preventDefault();

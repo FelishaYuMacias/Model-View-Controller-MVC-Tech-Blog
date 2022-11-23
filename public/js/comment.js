@@ -29,3 +29,21 @@ commentForm.addEventListener("submit", e=> {
     })
 }) 
 
+//deleting comment
+const deleteBtns = document.querySelectorAll(".commentDeleteBtn")
+deleteBtns.forEach(delBtn=>{
+    delBtn.addEventListener("click",e=>{
+        console.log("button clicked")
+        const commentId = e.target.getAttribute("comment-id")
+        console.log(commentId);
+        fetch(`/api/comments/${commentId}`,{
+            method:"DELETE"
+        }).then(res=>{
+            if(res.ok){
+                location.reload();
+            } else {
+                alert("error deleting comment")
+            }
+        })
+    })
+})

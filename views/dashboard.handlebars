@@ -1,16 +1,18 @@
-<h1>Welcome to your Dashboard {{username}}</h1>
+<h1>Welcome to your Dashboard, {{username}}!</h1>
 {{#if blogs.length}}
   <div class="blog-list">
-    <h3>Current Blogs:</h3>
+    <h3 style="font-size:x-large">Current Blogs:</h3>
 
     {{#each blogs as |blog|}}
-        <h4><a href="/api/blogs/{{blog.id}}">{{blog.title}}</a></h4>
-        <button class = "deleteBtn" data-id="{{blog.id}}">DELETE</button>
+    <div class="blog"b>
+        <h3><a href="/api/blogs/{{blog.id}}">{{blog.title}}</a></h3>
+        <button class = "deleteBtn" data-id="{{blog.id}}">Delete</button>
+    </div>
     {{/each}}
   </div>
   {{/if}}
 
-   <h3>Create a New Blog:</h3>
+   <h3 style="font-size:x-large">Create a New Blog:</h3>
 
     <form id="blogForm">
       <div class="form-group">

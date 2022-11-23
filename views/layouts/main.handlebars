@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-    <header>
-        <nav>
-           <a href="/">
-        <div>
-          Home
-        </div>
-      </a>
-     <div id="dashboard">
-             {{#if loggedIn}}
-              <a href="/dashboard">Dashboard</a>
-          {{else}}
-            <a href="/login">Dashboard</a>
-          {{/if}}
-        </div>
-        <div id="logBtn">
-             {{#if loggedIn}}
-              <button
-                type="button"
-                id="logoutBtn"
-              >Logout</button>
-          {{else}}
-            <a href="/login">Login or Sign Up</a>
-          {{/if}}
-        </div>
-    </nav>
-    </header>
-    {{{body}}}
 
- <script src="/js/logout.js"></script>   
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            <div>
+              Home
+            </div>
+          </a>
+        </li>
+        <li>
+          <div id="dashboard">
+            {{#if loggedIn}}
+            <a href="/dashboard">Dashboard</a>
+            {{else}}
+            <a href="/login">Dashboard</a>
+            {{/if}}
+          </div>
+        </li>
+        <li>
+          <div id="logBtn">
+            {{#if loggedIn}}
+            <button type="button" id="logoutBtn">Logout</button>
+            {{else}}
+            <a href="/login">Login or Sign Up</a>
+            {{/if}}
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <hr>
+    <hr>
+  </header>
+  {{{body}}}
+
+  <script src="/js/logout.js"></script>
 </body>
+
 </html>
