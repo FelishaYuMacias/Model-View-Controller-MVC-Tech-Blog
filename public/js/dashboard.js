@@ -30,3 +30,21 @@ blogForm.addEventListener("submit", e=> {
         }
     })
 }) 
+
+//deleting blog post
+const deleteBtns = document.querySelectorAll(".deleteBtn")
+deleteBtns.forEach(delBtn=>{
+    delBtn.addEventListener("click",e=>{
+        const blogId = e.target.getAttribute("data-id")
+        console.log(blogId);
+        fetch(`/api/blogs/${blogId}`,{
+            method:"DELETE"
+        }).then(res=>{
+            if(res.ok){
+                location.reload();
+            } else {
+                alert("error deleting blog")
+            }
+        })
+    })
+})

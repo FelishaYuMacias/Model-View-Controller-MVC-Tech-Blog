@@ -21,9 +21,9 @@
     <p class="commentText">{{comment_text}}</p>
     <p class="commentOwner"><span>~</span>Created by {{user.username}} on {{date_created}}<span>~</span></p>
     {{#if loggedIn}}
-              <button id="commentDeleteBtn">Delete</button>
+              <button class="commentDeleteBtn">Delete</button>
           {{else}}
-            <a href="/login">Dashboard</a>
+            <hr>
           {{/if}}
 </div>
 <hr>

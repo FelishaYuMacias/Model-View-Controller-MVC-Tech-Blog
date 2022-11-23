@@ -1,4 +1,4 @@
-
+//adding comment to blog
 const commentForm=document.querySelector('#commentForm');
 commentForm.addEventListener("submit", e=> {
     e.preventDefault();
@@ -28,3 +28,4 @@ commentForm.addEventListener("submit", e=> {
         }
     })
 }) 
+

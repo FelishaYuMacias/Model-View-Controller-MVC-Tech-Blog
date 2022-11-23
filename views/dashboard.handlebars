@@ -5,7 +5,7 @@
 
     {{#each blogs as |blog|}}
         <h4><a href="/api/blogs/{{blog.id}}">{{blog.title}}</a></h4>
-        <button id = "deleteBtn" data-id="{{blog.id}}">DELETE</button>
+        <button class = "deleteBtn" data-id="{{blog.id}}">DELETE</button>
     {{/each}}
   </div>
   {{/if}}
