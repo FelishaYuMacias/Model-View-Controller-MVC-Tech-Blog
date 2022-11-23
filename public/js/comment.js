@@ -1,4 +1,3 @@
-console.log("comment js linked")
 
 const commentForm=document.querySelector('#commentForm');
 commentForm.addEventListener("submit", e=> {

@@ -8,20 +8,21 @@
         <button id = "deleteBtn" data-id="{{blog.id}}">DELETE</button>
     {{/each}}
   </div>
+  {{/if}}
 
-    < <h3>Create a New Blog:</h3>
+   <h3>Create a New Blog:</h3>
 
-    <form class="form new-blog-form">
+    <form id="blogForm">
       <div class="form-group">
         <input class="form-input" type="text" id="blog-title" name="blog-title" placeholder="Blog Title" />
       </div>
       
       <div class="form-group">
-        <textarea class="form-input" id="blog-desc" name="blog-desc" placeholder="Blog Content"></textarea>
+        <textarea class="form-input" id="blog-content" name="blog-content" placeholder="Blog Content"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
 
-  {{/if}}
+<script src="/js/dashboard.js"></script>

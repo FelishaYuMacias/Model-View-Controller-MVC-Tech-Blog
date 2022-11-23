@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const { User, Comment, Blog } = require('../../models');
 
+router.get('/', (req, res) => {
+  Blog.findAll({})
+    .then(blogData => res.json(blogData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/:id', async (req, res) => {
 	try {
 		const blogData = await Blog.findByPk(req.params.id, {
